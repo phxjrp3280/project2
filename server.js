@@ -43,7 +43,11 @@ app.use(methodOverride('_method'));// allow POST, PUT and DELETE from a form
 //___________________
 //localhost:3000
 app.get('/' , (req, res) => {
-  res.send('Hello Score World!');
+  res.render('splash.ejs');
+});
+
+app.get('/score' , (req, res) => {
+  res.render('score.ejs');
 });
 
 //////////////// seed route ///////////////////
@@ -62,7 +66,7 @@ app.get('/' , (req, res) => {
           }
         ],
         (err, data)=>{
-            res.send('something is wrong');
+            res.redirect(/score);
         }
     )
   });
