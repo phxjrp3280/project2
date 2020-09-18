@@ -26,6 +26,8 @@ mongoose.connect(MONGODB_URI , { useNewUrlParser: true, useUnifiedTopology: true
 db.on('error', (err) => console.log(err.message + ' is Mongod not running?'));
 db.on('connected', () => console.log('mongo connected: ', MONGODB_URI));
 db.on('disconnected', () => console.log('mongo disconnected'));
+
+const Score = require('./models/scores.js')
 //___________________
 //Middleware
 //___________________
@@ -40,9 +42,32 @@ app.use(methodOverride('_method'));// allow POST, PUT and DELETE from a form
 // Routes
 //___________________
 //localhost:3000
-app.get('/' , (req, res) => {
+app.get('/score' , (req, res) => {
   res.send('Hello World!');
 });
+
+//////////////// seed route ///////////////////
+  app.get('/score/seed', (req, res)=>{
+    Score.create(
+        [
+          { usrname: "M.Cooper",
+            oppname: "M. Spates",
+            roundDetail: [{date: "01/01/2000",
+                            usrscore: 82,
+                            oppscore: 85,
+                            usrhdcp: 10,
+                            opphdcp:  13,
+                            rndnotes: "wet with fresh cut greens"
+                          }]
+          }
+        ],
+        (err, data)=>{
+            res.send('something is wrong');
+        }
+    )
+  });
+  /////////////// end of seed route ///////////////////
+
 //___________________
 //Listener
 //___________________
