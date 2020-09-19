@@ -15,7 +15,7 @@ const ScoreSchema = new Schema({
                     rndnotes: String} ]
 }, {timestamps: true});
 
-const score = mongoose.model('score', ScoreSchema);  //('hotel', HotelSchema); 'hotel' is the DB name in the db
+const score = mongoose.model('score', ScoreSchema);  //('hotel', ScoreSchema); 'hotel' is the DB name in the db
 
 //make this exportable to be accessed in `app.js`
 module.exports = score;

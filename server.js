@@ -46,11 +46,10 @@ app.get('/' , (req, res) => {
   res.render('splash.ejs');
 });
 
-app.get('/score' , (req, res) => {
-  res.render('score.ejs');
-});
 
-//////////////// seed route ///////////////////
+//*****************************************************
+//              Seed Route
+//*****************************************************
   app.get('/score/seed', (req, res)=>{
     Score.create(
         [
@@ -62,15 +61,89 @@ app.get('/score' , (req, res) => {
                             usrhdcp: 10,
                             opphdcp:  13,
                             rndnotes: "wet with fresh cut greens"
+                          },
+                          {date: "03/21/2019",
+                            usrscore: 91,
+                            oppscore: 92,
+                            usrhdcp: 10,
+                            opphdcp:  13,
+                            rndnotes: "heavy wind"
                           }]
-          }
+          },          { usrname: "M.Cooper",
+                      oppname: "D. Yates",
+                      roundDetail: [{date: "12/01/2000",
+                                      usrscore: 82,
+                                      oppscore: 75,
+                                      usrhdcp: 10,
+                                      opphdcp:  4,
+                                      rndnotes: "wet with fresh cut greens"
+                                    },
+                                    {date: "03/21/2019",
+                                      usrscore: 90,
+                                      oppscore: 81,
+                                      usrhdcp: 10,
+                                      opphdcp:  3,
+                                      rndnotes: "brutally hot cart girl mia"
+                                    }]
+                    }
         ],
         (err, data)=>{
-            res.redirect(/score);
+            res.redirect('/score');
         }
     )
   });
-  /////////////// end of seed route ///////////////////
+//*****************End of Seed*************************
+
+//*****************************************************
+//              Delete Route
+//*****************************************************
+  app.delete('/score/:id', (req, res)=>{
+        Score.findByIdAndRemove(req.params.id, (err, data)=>{
+            res.redirect('/score');//redirect back to score index
+        });
+    });
+
+
+//*****************************************************
+//              Index Route
+//*****************************************************
+  app.get('/score', (req, res) => {
+    Score.find({}, (error, scorearray) =>{
+      console.log(scorearray)
+      res.render('index.ejs',
+        {
+          scorearray: scorearray
+        })
+    })
+  })
+
+  // //////      show route for the pairing   /////////////////////////
+  app.get('/score/show/:id', (req,res) => {
+    Score.findById(req.params.id, (error, pairing)=>{
+      res.render(
+        'show.ejs',
+        {
+          pairing,
+          id: req.params.id
+        })
+      })
+    })
+  // //////////////////////////////////////////////////
+
+  // //////      show route for the pairing   /////////////////////////
+  app.get('/score/show2/:id', (req,res) => {
+    Score.findById(req.params.id, (error, roundinfo)=>{
+      console.log(roundinfo, error,req.params.id)
+      res.render(
+        'show2.ejs',
+        {
+          roundinfo,
+          id: req.params.id
+        })
+      })
+    })
+  // //////////////////////////////////////////////////
+
 
 //___________________
 //Listener

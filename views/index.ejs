@@ -5,6 +5,35 @@
     <title></title>
   </head>
   <body>
-    <h1> index page</h1>
+<h1> Opponents List</h1>
+
+    <div >
+    <%for(x=0;x<scorearray.length;x++){%>
+      <div style="display:flex;">
+        <div style="width: 150px;">
+          <h3><a href="score/show/<%=scorearray[x].id%>"><%=scorearray[x].oppname%></a></h3>
+        </div>
+        <div style="width: 150px;">
+          <a href="score/<%=scorearray[x].id%>/edit>">Edit</a>
+        </div>
+        <div>
+          <form action="/score/<%=scorearray[x].id%>?_method=DELETE" method="POST">
+              <input type="submit" value="Delete" />
+          </form>
+        </div>
+      </div>
+
+      <%for(y=0;y<scorearray[x].roundDetail.length;y++){%>
+        <div style="display:flex;"><br/>
+          <div style="width:30px;"></div> <br/>
+          <div>
+            <a href="score/show2/<%=scorearray[x].roundDetail[y].id%>">
+              <%=scorearray[x].roundDetail[y].date.toString().slice(0,16)%></a>
+          </div>
+        </div>
+      <%}%>
+    <%}%>
+    </div>
+
   </body>
 </html>
