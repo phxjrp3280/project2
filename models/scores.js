@@ -5,14 +5,14 @@ const Schema = mongoose.Schema; // create a shorthand for the mongoose Schema co
 // This will define the shape of the documents in the collection
 // https://mongoosejs.com/docs/guide.html
 const ScoreSchema = new Schema({
-  usrname     : String,
-  oppname     : String,
-  roundDetail : [ { date: Date,
-                    usrscore: Number,
-                    oppscore: Number,
-                    usrhdcp:  Number,
-                    opphdcp:  Number,
-                    rndnotes: String} ]
+  usrname:  {type:String,required:true},
+  oppname:  {type:String,required:true},
+  date:     {type: String,required:true},
+  usrscore: {type:Number,required:true},
+  oppscore: {type:Number,required:true},
+  usrhdcp:  {type:Number,required:true},
+  opphdcp:  {type:Number,required:true},
+  rndnotes: String
 }, {timestamps: true});
 
 const score = mongoose.model('score', ScoreSchema);  //('hotel', ScoreSchema); 'hotel' is the DB name in the db

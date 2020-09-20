@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1>Edit Score Entry Panel</h1>
+    <form action="/score/<%=id%>/edit?_method=PUT" method="POST">
+          <div style="display:flex;">
+            <div style="width: 100px;">
+              Your name:
+            </div>
+            <div>
+              <input type="text" name="usrname" value="M. Cooper" /><br />
+            </div>
+          </div>
+
+          <div style="display:flex;">
+            <div style="width: 100px;">
+              Your Score:
+            </div>
+            <div>
+              <input type="number" name="usrscore" value="<%=pairing.usrscore%>"/><br />
+            </div>
+          </div>
+
+          <div style="display:flex;">
+            <div style="width: 100px;">
+              Your Handicap:
+            </div>
+            <div>
+              <input type="number" name="usrhdcp" value="<%=pairing.usrhdcp%>"/><br />
+            </div>
+          </div>
+
+          <div style="display:flex;">
+            <div style="width: 100px;">
+              Date Played:
+            </div>
+            <div>
+              <input type="text" name="date" value="<%=pairing.date%>"/><br />
+            </div>
+          </div>
+
+          <div style="display:flex;">
+            <div style="width: 100px;">
+              Opp Name:
+            </div>
+            <div style="width:100px;">
+              <input type="text" name="oppname" value="<%=pairing.oppname%>" /><br />
+            </div>
+          </div>
+
+          <div style="display:flex;">
+            <div style="width: 100px;">
+              Opp Score:
+            </div>
+            <div>
+              <input type="number" name="oppscore" value="<%=pairing.oppscore%>" /><br />
+            </div>
+          </div>
+
+          <div style="display:flex;">
+            <div style="width: 100px;">
+              Opp Handicap:
+            </div>
+            <div>
+              <input type="number" name="opphdcp" value="<%=pairing.opphdcp%>"/><br />
+            </div>
+          </div>
+
+          <div style="display:flex;">
+            <div style="width: 100px;">
+              Round Notes:
+            </div>
+            <div>
+              <input type="text" name="rndnotes" value="<%=pairing.rndnotes%>"/><br />
+            </div>
+          </div>
+
+      <input type="submit" value="Update Score Record" />
+    </form>
+  </body>
+</html>

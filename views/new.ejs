@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1>New Log Entry Panel</h1>
+    <form action="/create/" method="POST">
+      <div style="display:flex;">
+        <div style="width: 100px;">
+          Your name:
+        </div>
+        <div>
+          <input type="text" name="usrname" value="M. Cooper" /><br />
+        </div>
+      </div>
+
+      <div style="display:flex;">
+        <div style="width: 100px;">
+          Your Score:
+        </div>
+        <div>
+          <input type="number" name="usrscore" placeholder="80"/><br />
+        </div>
+      </div>
+
+      <div style="display:flex;">
+        <div style="width: 100px;">
+          Your Handicap:
+        </div>
+        <div>
+          <input type="number" name="usrhdcp" placeholder="10"/><br />
+        </div>
+      </div>
+
+      <div style="display:flex;">
+        <div style="width: 100px;">
+          Date Played:
+        </div>
+        <div>
+          <input type="text" name="date" placeholder="12/31/1999"/><br />
+        </div>
+      </div>
+
+      <div style="display:flex;">
+        <div style="width: 100px;">
+          Opp Name:
+        </div>
+        <div style="width:100px;">
+          <input type="text" name="oppname" placeholder="Enter Name" /><br />
+        </div>
+      </div>
+
+      <div style="display:flex;">
+        <div style="width: 100px;">
+          Opp Score:
+        </div>
+        <div>
+          <input type="number" name="oppscore" placeholder="90"" /><br />
+        </div>
+      </div>
+
+      <div style="display:flex;">
+        <div style="width: 100px;">
+          Opp Handicap:
+        </div>
+        <div>
+          <input type="number" name="opphdcp" placeholder="10""/><br />
+        </div>
+      </div>
+
+      <div style="display:flex;">
+        <div style="width: 100px;">
+          Round Notes:
+        </div>
+        <div>
+          <input type="text" name="rndnotes" placeholder="Great condition for a competitive round"><br />
+        </div>
+      </div>
+
+      <input type="submit" value="Add Score Record" />
+    </form>
+  </body>
+</html>
