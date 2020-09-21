@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
-    <meta charset="utf-8">
-    <title></title>
+    <%- include('./partials/head.ejs') %>
   </head>
   <body>
-    <h1>Edit Score Entry Panel</h1>
+    <%- include('./partials/header.ejs') %>
+    <div class='h2'>Edit Score Entry Panel</div>
     <form action="/score/<%=id%>/edit?_method=PUT" method="POST">
-          <div style="display:flex;">
-            <div style="width: 100px;">
+          <div class='flex'>
+            <div id='inptitle'>
               Your name:
             </div>
-            <div>
+            <div id='inptitle'>
               <input type="text" name="usrname" value="M. Cooper" /><br />
             </div>
           </div>

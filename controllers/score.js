@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const Score = require('../models/scores.js')
-
+const bcrypt = require('bcrypt');
 router.get('/' , (req, res) => {
   res.render('splash.ejs');
 });
