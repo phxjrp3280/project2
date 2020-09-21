@@ -4,30 +4,37 @@
     <%- include('./partials/head.ejs') %>
   </head>
   <body>
-    <%- include('./partials/header.ejs') %>
-    <div class='h2'> Opponents List</div>
+    <div class='container'>
+      <div class='topcon' >
+        <%- include('./partials/header.ejs') %>
+        <div class='h2'> Opponents List</div>
 
-    <div >
-    <%for(x=0;x<scorearray.length;x++){%>
-      <div style="display:flex;">
-        <div style="width: 150px;">
-          <div class='h3'><a href="/score/<%=scorearray[x].id%>"><%=scorearray[x].oppname%></a></div>
-          <div><div class='h3'><%=scorearray[x].date%> </div></div>
-        </div>
-        <div style="width: 150px;">
-          <div class='h3'><a href="/score/<%=scorearray[x].id%>/edit">Edit</a></div>
-        </div>
-        <div>
-          <div class='h3'>
-            <form action="/score/<%=scorearray[x].id%>?_method=DELETE" method="POST">
-                <input type="submit" value="Delete" />
-            </form>
+        <div >
+        <%for(x=0;x<scorearray.length;x++){%>
+          <div style="display:flex;">
+            <div style="width: 150px;">
+              <div class='h3'><a href="/score/<%=scorearray[x].id%>"><%=scorearray[x].oppname%></a></div>
+              <div><div class='h3'><%=scorearray[x].date%> </div></div>
+            </div>
+            <div style="width: 150px;">
+              <div class='h3'><a href="/score/<%=scorearray[x].id%>/edit">Edit</a></div>
+            </div>
+            <div>
+              <div class='h3'>
+                <form action="/score/<%=scorearray[x].id%>?_method=DELETE" method="POST">
+                    <input type="submit" value="Delete" />
+                </form>
+              </div>
+            </div>
+            <div class='topbot'> </div>
           </div>
+        <%}%>
         </div>
-      </div>
-    <%}%>
+        <div style="display: block;">
+          <div class='topbot'><a href="/score/new">Add Scores?</a> </div>
+          <div class='topbot'><a href="/score/bets">See Betting Results</a></div>
+        </div>
     </div>
-    <a href="/score/new">Add Scores?</a>
-
+  </div>
   </body>
 </html>

@@ -1,0 +1,41 @@
+body {
+  font-family: "Lora";
+}
+
+.h2 {
+  font-size:20px;
+  margin-bottom: 10px;
+}
+
+.h3 {
+  font-size:15px;
+}
+
+.flex {
+  display: flex;
+}
+
+#inptitle {
+  width:140px;
+}
+
+.betdet {
+  margin-top: 5px;
+}
+
+.topbot {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  width: 200px;
+  height: 50px;}
+
+.container {
+  width:600px;
+  height: 100%;
+  border: 2px solid navy;
+  border-radius: 20px;
+}
+
+.topcon {
+  margin: 1em;
+}

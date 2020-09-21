@@ -2,15 +2,15 @@ const express = require('express');
 const router = express.Router();
 const Score = require('../models/scores.js')
 const bcrypt = require('bcrypt');
-router.get('/' , (req, res) => {
+router.get('/splash' , (req, res) => {
   res.render('splash.ejs');
 });
-
-
+//const methodOverride  = require('method-override');
+//router.use(methodOverride('_method'));// allow POST, PUT and DELETE from a form
 //*****************************************************
 //              Seed Route
 //*****************************************************
-router.get('/score/seed', (req, res)=>{
+router.get('/seed', (req, res)=>{
   Score.create(
         [
           { usrname: "M.Cooper",
@@ -57,8 +57,9 @@ router.get('/score/seed', (req, res)=>{
   });
 //*****************End of Seed*************************
 
+
 /// routes - this is an add route
-router.get('/score/new', (req, res) => {
+router.get('/new', (req, res) => {
     res.render('new.ejs');
   })
 
@@ -68,7 +69,7 @@ router.post('/create', (req, res) => {
     })
   })
 
-router.get('/score/:id/edit', (req,res) => {
+router.get('/:id/edit', (req,res) => {
     Score.findById(req.params.id, (error, pairing)=>{
       console.log('in edit')
       res.render(
@@ -81,26 +82,16 @@ router.get('/score/:id/edit', (req,res) => {
     })
 
   ///////////// put for edit route ///////////
-router.put('/score/:id/edit', (req, res)=>{
+router.put('/:id/edit', (req, res)=>{
       Score.findByIdAndUpdate(req.params.id, req.body, {new:true}, (err, updatedModel)=>{
           res.redirect(`/score`);
       });
   });
 
 //*****************************************************
-//              Delete Route
-//*****************************************************
-router.delete('/score/:id', (req, res)=>{
-        Score.findByIdAndRemove(req.params.id, (err, data)=>{
-            res.redirect('/score');//redirect back to score index
-        });
-    });
-
-
-//*****************************************************
 //              Index Route
 //*****************************************************
-router.get('/score', (req, res) => {
+router.get('/', (req, res) => {
     Score.find({}, (error, scorearray) =>{
       res.render('index.ejs',
         {
@@ -108,9 +99,20 @@ router.get('/score', (req, res) => {
         })
     })
   })
-
+  //*****************************************************
+  //              Betting Page - copy of index route just
+  //              a new ejs file
+  //*****************************************************
+  router.get('/bets', (req, res) => {
+      Score.find({}, (error, scorearray) =>{
+        res.render('bets.ejs',
+          {
+            scorearray: scorearray
+          })
+      })
+    })
   // //////      show route for the pairing   /////////////////////////
-router.get('/score/:id', (req,res) => {
+router.get('/:id', (req,res) => {
     Score.findById(req.params.id, (error, pairing)=>{
       res.render(
         'show.ejs',
@@ -123,7 +125,7 @@ router.get('/score/:id', (req,res) => {
   // //////////////////////////////////////////////////
 
   //////////////  Delete route ////////////////
-router.delete('/score/:id', (req, res)=>{
+  router.delete('/:id', (req, res)=>{
       Score.findByIdAndRemove(req.params.id, (err, data)=>{
           res.redirect('/score');//redirect back to score index
       });

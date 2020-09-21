@@ -4,82 +4,86 @@
     <%- include('./partials/head.ejs') %>
   </head>
   <body>
-    <%- include('./partials/header.ejs') %>
-    <div class='h2'>Edit Score Entry Panel</div>
-    <form action="/score/<%=id%>/edit?_method=PUT" method="POST">
-          <div class='flex'>
-            <div id='inptitle'>
-              Your name:
-            </div>
-            <div id='inptitle'>
-              <input type="text" name="usrname" value="M. Cooper" /><br />
-            </div>
-          </div>
+    <div class='container'>
+      <div class='topcon'>
+        <%- include('./partials/header.ejs') %>
+        <div class='h2'>Edit Score Entry Panel</div>
+        <form action="/score/<%=id%>/edit?_method=PUT" method="POST">
+              <div class='flex'>
+                <div style="width: 160px;">
+                  Your name:
+                </div>
+                <div>
+                  <input type="text" name="usrname" value="M. Cooper" /><br />
+                </div>
+              </div>
 
-          <div style="display:flex;">
-            <div style="width: 100px;">
-              Your Score:
-            </div>
-            <div>
-              <input type="number" name="usrscore" value="<%=pairing.usrscore%>"/><br />
-            </div>
-          </div>
+              <div class='flex'>
+                <div style="width: 160px;">
+                  Your Score:
+                </div>
+                <div>
+                  <input type="number" name="usrscore" value="<%=pairing.usrscore%>"/><br />
+                </div>
+              </div>
 
-          <div style="display:flex;">
-            <div style="width: 100px;">
-              Your Handicap:
-            </div>
-            <div>
-              <input type="number" name="usrhdcp" value="<%=pairing.usrhdcp%>"/><br />
-            </div>
-          </div>
+              <div class='flex'>
+                <div style="width: 160px;">
+                  Your Handicap:
+                </div>
+                <div>
+                  <input type="number" name="usrhdcp" value="<%=pairing.usrhdcp%>"/><br />
+                </div>
+              </div>
 
-          <div style="display:flex;">
-            <div style="width: 100px;">
-              Date Played:
-            </div>
-            <div>
-              <input type="text" name="date" value="<%=pairing.date%>"/><br />
-            </div>
-          </div>
+              <div class='flex'>
+                <div style="width: 160px;">
+                  Date Played:
+                </div>
+                <div>
+                  <input type="text" name="date" value="<%=pairing.date%>"/><br />
+                </div>
+              </div>
 
-          <div style="display:flex;">
-            <div style="width: 100px;">
-              Opp Name:
-            </div>
-            <div style="width:100px;">
-              <input type="text" name="oppname" value="<%=pairing.oppname%>" /><br />
-            </div>
-          </div>
+              <div class = 'flex'>
+                <div style="width: 160px;">
+                  Opp Name:
+                </div>
+                <div style="width:160px;">
+                  <input type="text" name="oppname" value="<%=pairing.oppname%>" /><br />
+                </div>
+              </div>
 
-          <div style="display:flex;">
-            <div style="width: 100px;">
-              Opp Score:
-            </div>
-            <div>
-              <input type="number" name="oppscore" value="<%=pairing.oppscore%>" /><br />
-            </div>
-          </div>
+              <div class = 'flex'>
+                <div style="width: 160px;">
+                  Opp Score:
+                </div>
+                <div>
+                  <input type="number" name="oppscore" value="<%=pairing.oppscore%>" /><br />
+                </div>
+              </div>
 
-          <div style="display:flex;">
-            <div style="width: 100px;">
-              Opp Handicap:
-            </div>
-            <div>
-              <input type="number" name="opphdcp" value="<%=pairing.opphdcp%>"/><br />
-            </div>
-          </div>
+              <div class = 'flex'>
+                <div style="width: 160px;">
+                  Opp Handicap:
+                </div>
+                <div>
+                  <input type="number" name="opphdcp" value="<%=pairing.opphdcp%>"/><br />
+                </div>
+              </div>
 
-          <div style="display:flex;">
-            <div style="width: 100px;">
-              Round Notes:
-            </div>
-            <div>
-              <input type="text" name="rndnotes" value="<%=pairing.rndnotes%>"/><br />
-            </div>
-          </div>
+              <div class = 'flex'>
+                <div style="width: 160px;">
+                  Round Notes:
+                </div>
+                <div>
+                  <input style="width:350px;" type="text" name="rndnotes" value="<%=pairing.rndnotes%>"/><br />
+                </div>
+              </div>
 
-      <input type="submit" value="Update Score Record" />
-    </form>
+          <input type="submit" value="Update Score Record" />
+        </form>
+      </div>
+    </div>
   </body>
 </html>

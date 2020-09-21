@@ -4,48 +4,52 @@
     <%- include('./partials/head.ejs') %>
   </head>
   <body>
-    <%- include('./partials/header.ejs') %>
-    <h3><%=pairing.oppname%> vs. <%=pairing.usrname%> </h3>
-      <div style="display:flex">
-      <div id='oppstat'>
+    <div class='container'>
+      <div class='topcon'>
+        <%- include('./partials/header.ejs') %>
+        <h3><%=pairing.oppname%> vs. <%=pairing.usrname%> </h3>
           <div style="display:flex">
-            <div style="width:80px">Name</div>
-            <div><%=pairing.oppname%></div>
-          </div>
-          <div style="display:flex">
-            <div style="width:80px">Score</div>
-            <div><%=pairing.oppscore%></div>
-          </div>
-          <div style="display:flex">
-            <div style="width:80px">Handicap</div>
-            <div><%=pairing.opphdcp%></div>
-          </div>
-          <div style="display:flex">
-            <div style="width:80px">Date</div>
-            <div><%=pairing.date%></div>
-          </div>
-          <div style="display:flex">
-            <div style="width:80px">Notes</div>
-            <div><%=pairing.rndnotes%></div>
-          </div>
-        </div>
-        <div id='oppstat' style="margin:0px 0px 0px 20px;">
-            <div style="display:flex">
-              <div style="width:80px">Name</div>
-              <div><%=pairing.usrname%></div>
+          <div id='oppstat'>
+              <div style="display:flex">
+                <div style="width:80px">Name:</div>
+                <div><%=pairing.oppname%></div>
+              </div>
+              <div style="display:flex">
+                <div style="width:80px">Score:</div>
+                <div><%=pairing.oppscore%></div>
+              </div>
+              <div style="display:flex">
+                <div style="width:80px">Handicap:</div>
+                <div><%=pairing.opphdcp%></div>
+              </div>
+              <div style="display:flex">
+                <div style="width:80px">Date:</div>
+                <div><%=pairing.date%></div>
+              </div>
+              <div style="display:flex">
+                <div style="width:80px; ">Notes:</div>
+                <div "><%=pairing.rndnotes%></div>
+              </div>
             </div>
-            <div style="display:flex">
-              <div style="width:80px">Score</div>
-              <div><%=pairing.usrscore%></div>
+            <div id='oppstat' style="margin:0px 0px 0px 20px;">
+                <div style="display:flex">
+                  <div style="width:80px">Name:</div>
+                  <div><%=pairing.usrname%></div>
+                </div>
+                <div style="display:flex">
+                  <div style="width:80px">Score:</div>
+                  <div><%=pairing.usrscore%></div>
+                </div>
+                <div style="display:flex">
+                  <div style="width:80px">Handicap:</div>
+                  <div><%=pairing.usrhdcp%></div>
+                </div>
+              </div>
             </div>
-            <div style="display:flex">
-              <div style="width:80px">Handicap</div>
-              <div><%=pairing.usrhdcp%></div>
-            </div>
-          </div>
-        </div>
 
-
-  <a style = "margin: 50px 0px 0px 0px;" href="/score">Back to Index</a>
+            <div class='topbot'></div>
+            <a class='topbot' href="/score">Back to Index</a>
+      </div>
+    </div>
   </body>
 </html>

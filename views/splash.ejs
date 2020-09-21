@@ -4,16 +4,18 @@
     <%- include('./partials/head.ejs') %>
   </head>
   <body>
-    <%- include('./partials/header.ejs') %>
+    <div class='container'>
+        <div class = 'topcon'>
+        <%- include('./partials/header.ejs') %>
 
-    <div class='h2'>Welcome to Golf Score Keeper</h1>
-
-
-    <div class='h3'><a href="/score">View Scores?</a></div>
-
-    <div class='h3'><a href="/score/seed">Seed Scores?</a></div>
+        <div class='h2'>Welcome, Lets see how you did...</h1>
 
 
+        <div class='topbot'><a href="/score">View Scores?</a></div>
+
+        <div class='topbot'><a href="/score/seed">Seed Scores?</a></div>
+    </div>
+  </div>
 
 
   </body>
