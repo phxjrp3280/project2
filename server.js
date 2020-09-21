@@ -46,11 +46,15 @@ app.use(methodOverride('_method'));// allow POST, PUT and DELETE from a form
 
 const scoreController = require('./controllers/score.js')
 app.use("/score",scoreController);
+
+
 //___________________
 // Routes
 //___________________
 //localhost:3000
-
+app.get('/', (req, res) => {
+      res.render('splash.ejs')
+    })
 
 //___________________
 //Listener
