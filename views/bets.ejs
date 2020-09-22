@@ -4,45 +4,51 @@
     <%- include('./partials/head.ejs') %>
   </head>
   <body>
-    <%- include('./partials/header.ejs') %>
-    <div class='h2'> Betting Results</div>
+    <div class='container'>
+      <div class='topcon' >
+        <%- include('./partials/header.ejs') %>
+        <div class='h2'> Betting Results</div>
 
-    <% let oppraw = 5;
-        let totalbets = 0;
-    %>
-    <div >
-    <%for(x=0;x<scorearray.length;x++){
-      oppraw = (scorearray[x].oppscore - scorearray[x].opphdcp) - (scorearray[x].usrscore - scorearray[x].usrhdcp)
-      if(oppraw < 0){%>
-        <div class='betdet'> On <%=scorearray[x].date%>   <%=scorearray[x].oppname%> defeated <%=scorearray[x].usrname%>
-          <%=scorearray[x].oppscore - scorearray[x].opphdcp%> to
-         <%=scorearray[x].usrscore - scorearray[x].usrhdcp%>
-          - $5
-       </div>
-       <%totalbets =-5%>
-       <%} else {
-      if(oppraw > 0){%>
-        <div class = 'betdet'> On <%=scorearray[x].date%>   <%=scorearray[x].oppname%> lost to <%=scorearray[x].usrname%>
-          <%=scorearray[x].oppscore - scorearray[x].opphdcp%> to
-         <%=scorearray[x].usrscore - scorearray[x].usrhdcp%>
-          + $5
-          <%totalbets =+5%>
+        <% let oppraw = 0;
+            let totalbets = 0;
+        %>
+        <div >
+        <%for(x=0;x<scorearray.length;x++){
+          oppraw = (scorearray[x].oppscore - scorearray[x].opphdcp) - (scorearray[x].usrscore - scorearray[x].usrhdcp)
+          if(oppraw < 0){%>
+            <div class='betdet'> On <%=scorearray[x].date%>   <%=scorearray[x].oppname%> defeated <%=scorearray[x].usrname%>
+              <%=scorearray[x].oppscore - scorearray[x].opphdcp%> to
+             <%=scorearray[x].usrscore - scorearray[x].usrhdcp%>
+              - $5
+           </div>
+           <%(totalbets = totalbets - 5)%>
+           <%} else {
+          if(oppraw > 0){%>
+            <div class = 'betdet'> On <%=scorearray[x].date%>   <%=scorearray[x].oppname%> lost to <%=scorearray[x].usrname%>
+              <%=scorearray[x].oppscore - scorearray[x].opphdcp%> to
+             <%=scorearray[x].usrscore - scorearray[x].usrhdcp%>
+              + $5
+              <%(totalbets = totalbets + 5)%>
+            </div>
+           <%} else {%>
+             <div class = 'betdet'> On <%=scorearray[x].date%>   <%=scorearray[x].oppname%> tied <%=scorearray[x].usrname%>
+               <%=scorearray[x].oppscore - scorearray[x].opphdcp%> to
+              <%=scorearray[x].usrscore - scorearray[x].usrhdcp%>
+              - Push
+             </div>
+
+           <%}%>
+           <%}%>
+        <%}%>
         </div>
-       <%} else {%>
-         <div class = 'betdet'> On <%=scorearray[x].date%>   <%=scorearray[x].oppname%> tied <%=scorearray[x].usrname%>
-           <%=scorearray[x].oppscore - scorearray[x].opphdcp%> to
-          <%=scorearray[x].usrscore - scorearray[x].usrhdcp%>
-          - Push
-         </div>
+        <% if(totalbets >0){%>
+            <h3> Nice, You're ahead of the game by $ <%=totalbets%> </h3>
+        <%} if(totalbets<0){%>
+            <h3> Ish, maybe you should take lessons instead of betting.  You're behind by $ <%=totalbets%> </h3>
+        <%}%>
 
-       <%}%>
-       <%}%>
-    <%}%>
+        <a href="/score">Return</a>
+        </div>
     </div>
-    <% if(totalbets >0){%>
-        <h3> Nice, You're ahead of the game by $ <%=totalbets%> </h3>
-    <%} if(totalbets<0){%>
-        <h3> Ish, maybe you should bet lessons instead of betting.  You're behind by $ <%=totalbets%> </h3>
-    <%}%>
   </body>
 </html>

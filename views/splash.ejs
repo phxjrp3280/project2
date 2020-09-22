@@ -5,18 +5,53 @@
   </head>
   <body>
     <div class='container'>
-        <div class = 'topcon'>
+      <div class = 'topcon'>
         <%- include('./partials/header.ejs') %>
+        <%if(curruser) {%>
 
-        <div class='h2'>Welcome, Lets see how you did...</h1>
+        <div class='h2'>Welcome, Lets see how you did...</div>
 
 
         <div class='topbot'><a href="/score">View Scores?</a></div>
 
         <div class='topbot'><a href="/score/seed">Seed Scores?</a></div>
-    </div>
-  </div>
 
+        <div>
+          <form action="/usr/logout?_method=DELETE" method="POST">
+            <input type="submit" value="Logout" />
+          </form>
+        </div>
+        
+        <%}%>
+      </div>
+      </div>
+    <%if(!curruser) {%>
+    <div class='botcon'>
+    <form action="/usr/login" method="POST">
+          <div style="display:flex;">
+            <div>
+              Username:
+            </div>
+            <div>
+              <input type="text" name="username" /><br />
+            </div>
+          </div>
+          <div style="display:flex;">
+            <div >
+              Password:
+            </div>
+            <div>
+              <input type="password" name="password" /><br />
+            </div>
+          </div>
+          <input type="submit" value="Login" />
+        </form>
+
+        <div style="padding-top: 20px;">
+        <a href="/usr/new">Add New Account</a>
+        </div>
+      </div>
+      <%}%>
 
   </body>
 </html>

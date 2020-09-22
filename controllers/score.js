@@ -1,9 +1,11 @@
+//route and controller file in one
+
 const express = require('express');
 const router = express.Router();
 const Score = require('../models/scores.js')
 const bcrypt = require('bcrypt');
 router.get('/splash' , (req, res) => {
-  res.render('splash.ejs');
+  res.render('splash.ejs', {curruser: req.session.currentUser});
 });
 //const methodOverride  = require('method-override');
 //router.use(methodOverride('_method'));// allow POST, PUT and DELETE from a form

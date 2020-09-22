@@ -38,4 +38,24 @@ body {
 
 .topcon {
   margin: 1em;
+  position: relative;
+  height:100%
+}
+
+.botcon{
+  width:568px;
+  height: 100%;
+  border: 2px solid navy;
+  border-radius: 20px;
+  padding: 1em 1em 1em 1em;
+}
+
+.fpic {
+  margin: auto;
+  display: block;
+  position:absolute;
+  top: 0;
+  opacity: .2;
+  width: 568px;
+  z-index: -1;
 }
