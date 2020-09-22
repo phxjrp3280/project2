@@ -67,13 +67,14 @@ app.use(
 // Routes
 //___________________
 //localhost:3000
-app.get("/", (req, res) => {
-  res.render('splash.ejs', {curruser: req.session.currentUser})
-})
+
 
 app.use("/score",scoreController);
 app.use("/usr",usrRoutes);
 
+app.get("/", (req, res) => {
+  res.render('splash.ejs', {curruser: req.session.currentUser})
+})
 
 //___________________
 //Listener
