@@ -23,7 +23,7 @@ const db = mongoose.connection;
 //Port
 //___________________
 // Allow use of Heroku's port or your own local port, depending on the environment
-const PORT = process.env.PORT || 3003;
+const PORT = process.env.PORT || 3000;
 //___________________
 //Database
 //___________________
