@@ -67,7 +67,7 @@ app.use(
 // Routes
 //___________________
 //localhost:3000
-app.get('/', (req, res) => {
+app.get("/", (req, res) => {
   res.render('splash.ejs', {curruser: req.session.currentUser})
 })
 
