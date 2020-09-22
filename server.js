@@ -73,7 +73,7 @@ app.use("/score",scoreController);
 app.use("/usr",usrRoutes);
 
 app.get("/", (req, res) => {
-  res.redirict('/score/splash')
+  res.redirect('/score/splash')
 })
 
 //___________________
