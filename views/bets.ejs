@@ -41,11 +41,13 @@
            <%}%>
         <%}%>
         </div>
+        <div style="width: 550px;">
         <% if(totalbets >0){%>
             <h3> Nice, You're ahead of the game by $ <%=totalbets%> </h3>
         <%} if(totalbets<0){%>
             <h3> Ish, maybe you should take lessons instead of betting.  You're behind by $ <%=totalbets%> </h3>
         <%}%>
+        </div>
 
         <a href="/score">Return</a>
         </div>

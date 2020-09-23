@@ -4,8 +4,8 @@
     <%- include('./partials/head.ejs') %>
   </head>
   <body>
-    <div class='container'>
-      <div class = 'topcon'>
+    <div class='cont1'>
+      <div>
         <%- include('./partials/header.ejs') %>
         <%if(curruser) {%>
 
@@ -21,13 +21,14 @@
             <input type="submit" value="Logout" />
           </form>
         </div>
-        
+
         <%}%>
       </div>
-      </div>
-    <%if(!curruser) {%>
-    <div class='botcon'>
-    <form action="/usr/login" method="POST">
+    </div>
+    <div class='bot1'>
+      <%if(!curruser) {%>
+      <div>
+        <form action="/usr/login" method="POST">
           <div style="display:flex;">
             <div>
               Username:
@@ -37,7 +38,7 @@
             </div>
           </div>
           <div style="display:flex;">
-            <div >
+            <div>
               Password:
             </div>
             <div>
@@ -46,12 +47,11 @@
           </div>
           <input type="submit" value="Login" />
         </form>
-
         <div style="padding-top: 20px;">
-        <a href="/usr/new">Add New Account</a>
+          <a href="/usr/new">Add New Account</a>
         </div>
       </div>
       <%}%>
-
+    </div>
   </body>
 </html>

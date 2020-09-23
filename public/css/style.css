@@ -1,5 +1,7 @@
 body {
   font-family: "Lora";
+  width: 600px;
+  Height: 100%;
 }
 
 .h2 {
@@ -34,28 +36,38 @@ body {
   height: 100%;
   border: 2px solid navy;
   border-radius: 20px;
+  background-color: rgb(255,255,204);
 }
 
 .topcon {
-  margin: 1em;
+
+  width: 600px;
+  height: 100%;
   position: relative;
-  height:100%
+  padding: 5px 0px 20px 20px;
+
 }
 
 .botcon{
-  width:568px;
+  width: 100%;
   height: 100%;
   border: 2px solid navy;
   border-radius: 20px;
-  padding: 1em 1em 1em 1em;
+  padding: 10px;
 }
 
-.fpic {
-  margin: auto;
-  display: block;
-  position:absolute;
-  top: 0;
-  opacity: .2;
-  width: 568px;
-  z-index: -1;
+.cont1 {
+  width:600px;
+  height: 600px;
+  border: 2px solid navy;
+  border-radius: 20px;
+  padding: 10px;
+    background-color: rgb(255,255,204);
+;
+}
+
+.bot1 {  width:600px;
+  height: 100%;
+  border-radius: 20px;
+  padding: 10px;
 }
