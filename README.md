@@ -43,25 +43,15 @@ I think it would also be an easy task to link to the pga website and the financi
 # Skins Tracker
 
 
-# https://phxjrp3280.github.io/
-A tidy web page that brings back interesting pieces of corporate financial statements #
+# https://github.com/phxjrp3280/project2
 
-The page as you first arrive is a simple input screen: 
-I have some really cool gif's and no idea how to import them.
-
-![investorJ](jvest1.gif)
-
-Once an exchange and valid ticker symbol are entered the screen will populate as follows:
-
-
-![active screenshot](jvestact.gif)
+A fun site to track your competitive golf scores
 
 
 
 ## Installation
 ## Features
- - the code has a modal to instruct the user on what to do and..
- - the code has a carousel to display the same data over time for comparison purposes
+  Full Routes/CRUD
  
 ## Contributing
 
@@ -85,18 +75,24 @@ Clone this repo to your local machine using phxjrp3280/phxjrp3280.github.io
 ## Setup
 
 ## Technology Detail:
-  Javascript is used to create the web page and perform the logic necessary to present the information
+  ## NodeJS / Javascript is used to create the web page and perform the logic necessary to present the information
   
-  JQuery is the command library used by javascript to insert lines into the screen.  
+  ## 7 Restful Routes/CRUD
   
-  HTML is used to create the basic structure of the page.
+  ## Express (initial package.json built with init, express, method-override, mongoose, ejs)
   
-  CSS is used to style the web page.
+  ## Full MVC (Models, Views (EJS files), Controllers)
   
-  Ajax makes the call to the API.
+  ## HTML is used to create the basic structure of the page.
+  
+  ## CSS is used to style the web page.
+  
+  ## Mongoose DB
+  
+  ## Authorization - bcrypt, express-session session, dotenv
   
 ## Contributing
-I borrowed heavily from classroom examples.  Authors, whose techniques I blatenly mirrored (in alphabetical order) are , Jerrica Bobadilla, Matt Huntington,  Karolin Rafalski and Brendan Quirk
+Mike Cooper for the idea.  Instructors and authors whose techniques I blatenly mirrored (in alphabetical order) are , Jerrica Bobadilla, Matt Huntington,  Karolin Rafalski and Brendan Quirk
 
 
 ## Installing this page (the following installation instructions were duplicated from a sample repo and were included as an attempt at completeness)
@@ -110,7 +106,6 @@ Clone this repo to your local machine using phxjrp3280/phxjrp3280.github.io
 ###Step 2
 You can change the funtion to your liking.
 ###Step 3
-Create a new pull request using https://github.com/joanaz/HireDot2/compare/.
 
 ##InvestorJ - where passive investing is an art.
 
