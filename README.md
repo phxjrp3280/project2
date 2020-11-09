@@ -24,6 +24,8 @@ only their basic won/loss record but their betting results as well.
   
   ## Authorization - bcrypt, express-session session, dotenv
   
+  ## EJS Partials
+  
   # Challenges:  
   1.  I wasted a day and a half trying to make a datastructure work but I could not.  I learned that I need to review the data manipulation skills and revisit this task.  With only a few days to do the project and little room for error I could not spend the time I might have liked learning something new.  Disappointing but... thats the way it goes.
   2.  After I made the change to a strict record data structure the task was relatively straightforward.  I completed the meat of the task on day 3.  I learned during this that I do not have the grasp of imbedded functions that I would like to.
