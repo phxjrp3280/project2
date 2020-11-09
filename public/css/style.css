@@ -1,7 +1,13 @@
 body {
   font-family: "Lora";
   width: 600px;
-  Height: 100%;
+  Height: 1200%;
+  background-image: url("../images/pb1.jpg");
+  min-height: 500px;
+  background-position:center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position:relative;
 }
 
 .h2 {
@@ -36,7 +42,8 @@ body {
   height: 100%;
   border: 2px solid navy;
   border-radius: 20px;
-  background-color: rgb(255,255,204);
+  background-color: white;
+  opacity: .7;
 }
 
 .topcon {
@@ -62,7 +69,8 @@ body {
   border: 2px solid navy;
   border-radius: 20px;
   padding: 10px;
-    background-color: rgb(255,255,204);
+    background-color: white;
+    opacity: .7;
 ;
 }
 
